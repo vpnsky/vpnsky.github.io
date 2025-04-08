@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnsky.github.io/news/article-90302.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>redis+GEOhash地理位置</title>
+        <meta name="description" content="&nbsp; &nbsp;最近要做一个站点提醒的功能，找了很多资料，原来 redis里支持这种功能，简直是完美解决问题 先说原理 ， GEOhash&nbsp; 原理就是把经纬度分别以二进制表示，再奇" />
+        <link rel="icon" href="/assets/website/img/clashnyanpasunode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN天空 免费节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnsky.github.io/news/article-90302.htm" />
+    <meta property="og:site_name" content="VPN天空 免费节点订阅官网" />
+    <meta property="og:title" content="redis+GEOhash地理位置" />
+    <meta property="og:image" content="https://vpnsky.github.io/uploads/20240728-1/f85576165759819766d0676754c5172a.webp" />
+        <meta property="og:release_date" content="2025-04-07T09:01:54" />
+    <meta property="og:updated_time" content="2025-04-07T09:01:54" />
+        <meta property="og:description" content="&nbsp; &nbsp;最近要做一个站点提醒的功能，找了很多资料，原来 redis里支持这种功能，简直是完美解决问题 先说原理 ， GEOhash&nbsp; 原理就是把经纬度分别以二进制表示，再奇" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="redis+GEOhash地理位置">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clashnyanpasunode/main.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EWKLV7E45X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EWKLV7E45X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center xcblog-blog-logo">
+                                <span>VPN天空</span>
+                            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+            </nav><!-- .navbar -->
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+    <!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>redis+GEOhash地理位置</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9 xcblog-blog-list">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp; &nbsp;最近要做一个站点提醒的功能，找了很多资料，原来 redis里支持这种功能，简直是完美解决问题</p> <p>先说原理 ， GEOhash&nbsp; 原理就是把经纬度分别以二进制表示，再奇偶插入等到一个hash值，保存，相同的经纬度保存的地址相近，这样在取范围的时候，可以拿出相近的经纬度，&nbsp;</p> <p>&nbsp; 再就是边界问题，&nbsp;因为是不断的划分区域，所以在边界查询的时候，会把上评级的四个区域都拿出来，所以本质也是个zset有序集合，</p> <p>大家可以网上找些例子了解下，直接保存经纬代码</p> <pre class="has"><code>	//提供地图坐标GeoHash保存站点，redis支持的类型存储  		@Override 		public boolean saveRedisGeo(JSONObject str) { 			 this.geoOperations = redisTemplate.opsForGeo(); 			 this.zsetOperations = redisTemplate.opsForZSet(); 			    List&lt;Object&gt; listsite =  str.getJSONArray("lineLoad"); 				String  carId = str.getString("carID").trim(); 				String geoKey=""; 				 Map&lt;String,Point&gt; memberCoordinateMap = new HashMap&lt;String, Point&gt;(); 				 Point geoCoordinate=null; 		    	  for(int i=0;i&lt;listsite.size();i++){ 		    		  JSONObject objsite = (JSONObject) listsite.get(i); 		    		  geoCoordinate = new Point(objsite.getDoubleValue("lng"), objsite.getDoubleValue("lat")); 		    		  geoKey = carId+"#"+objsite.getString("id")+"#"+objsite.getString("siteName")+"#"+objsite.getString("address")+"#"+str.getString("sendCarDate"); 					  memberCoordinateMap.put(geoKey, geoCoordinate); 		    	  } 				 geoOperations.geoAdd("ELEF:SITE:"+carId, memberCoordinateMap); 				 zsetOperations.getOperations().expire("ELEF:SITE:"+carId,36L, TimeUnit.HOURS); 			return true; 		}</code></pre> <p>下面就是取出站点，&nbsp;车子到哪里了，&nbsp;然后传入经纬度，相应的距离计算得出</p> <pre class="has"><code>		/*     TMS系统地理坐标，附近站点，半径等  无需计算得到距离      */ 		private void getGeohashSite(String carid,JSONObject message){ 			  GeoRadiusCommandArgs geoRadiusArgs = GeoRadiusCommandArgs.newGeoRadiusArgs();   		         geoRadiusArgs = geoRadiusArgs.includeCoordinates().includeDistance();//查询返回结果包括距离和坐标   		         if (Direction.ASC.equals(Direction.ASC)) {//按查询出的坐标距离中心坐标的距离进行排序   		             geoRadiusArgs.sortAscending();   		         } else if (Direction.DESC.equals(Direction.DESC)) {   		             geoRadiusArgs.sortDescending();   		         } 		         geoRadiusArgs.limit(2);//限制查询数量    distance 距离 		         GeoResults&lt;GeoLocation&lt;String&gt;&gt; radiusGeo = geoOperations.geoRadius("ELEF:SITE:"+carid, new Circle(new Point(Double.parseDouble(message.getString("longitude")), Double.parseDouble(message.getString("latitude"))), new Distance(3, DistanceUnit.KILOMETERS)), geoRadiusArgs);   		         Iterator&lt;GeoResult&lt;GeoLocation&lt;String&gt;&gt;&gt; result =radiusGeo.iterator(); 		          while(result.hasNext()){ 		        	  GeoResult&lt;GeoLocation&lt;String&gt;&gt; geoLocation = result.next(); 		        	 // System.out.println(geoLocation.getDistance().getValue()); 		        	 // System.out.println(geoLocation.getContent().getName()); 		        	  String[]  sts = geoLocation.getContent().getName().split("#");//拼接拆开 		        	  if(sts[0].equals(carid) &amp;&amp; geoLocation.getDistance().getValue()&lt;1.5){ 		        		 // geoSendMessage(sts[0],sts[2],sts[3],sts[4]); 		        		//  zsetOperations.remove("ELEF:SITE:"+carid, geoLocation.getContent().getName()); 		        		  break; 		        	  } 		          } 		} 		</code></pre> <p>代码就这么多，&nbsp;刚开始因为不懂这个功能，写了很多代码，还不如这几行代码简洁，</p> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89539.htm">宠物店一个月卖几只 宠物店一个月卖几只猫</a></p>
+                                        <p>下一个：<a href="/news/article-90303.htm">动物疫苗多少钱一支啊图片大全（动物疫苗包括哪些）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-82346.htm" title="猫驱虫用什么药比较好百度知道（猫驱虫买什么药）">猫驱虫用什么药比较好百度知道（猫驱虫买什么药）</a></li>
+                        <li class="py-2"><a href="/news/article-76846.htm" title="猫三联每针需要间隔多久打（猫三联一共几针分几次打完?）">猫三联每针需要间隔多久打（猫三联一共几针分几次打完?）</a></li>
+                        <li class="py-2"><a href="/news/article-78888.htm" title="仓鼠脱毛有红点（仓鼠脱毛有红点正常吗）">仓鼠脱毛有红点（仓鼠脱毛有红点正常吗）</a></li>
+                        <li class="py-2"><a href="/news/article-73477.htm" title="动物医院的设计,接诊流程,仪器设备有哪些（动物医院诊疗管理系统）">动物医院的设计,接诊流程,仪器设备有哪些（动物医院诊疗管理系统）</a></li>
+                        <li class="py-2"><a href="/news/article-78226.htm" title="动物疫苗属于兽药吗为什么呢不能用（动物疫苗属于什么行业）">动物疫苗属于兽药吗为什么呢不能用（动物疫苗属于什么行业）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-free-node-subscribe.htm" title="VPN天空 | 3月6日21.8M/S|免费V2ray/Shadowrocket/Clash/SSR订阅节点分享">VPN天空 | 3月6日21.8M/S|免费V2ray/Shadowrocket/Clash/SSR订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-clash-v2ray-ss-ssr.htm" title="VPN天空 | 3月19日20.9M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点分享">VPN天空 | 3月19日20.9M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-88085.htm" title="vue动态设置样式">vue动态设置样式</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-free-node-subscribe.htm" title="VPN天空 | 3月17日18.4M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点分享">VPN天空 | 3月17日18.4M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-71499.htm" title="宠物领养平台app推荐下载苹果手机（宠物领养平台app推荐下载苹果手机软件）">宠物领养平台app推荐下载苹果手机（宠物领养平台app推荐下载苹果手机软件）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">79</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Us Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="container mt-4">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                VPN天空 免费节点订阅官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
