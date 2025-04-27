@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnsky.github.io/news/article-102948.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Vue中transition单个节点过渡与transition-group列表过渡全过程_vue.js</title>
+        <meta name="description" content="目录  transition单个节点过渡与transition-group列表过渡 transition的过渡作用和transition-group    transition单个节点过渡与trans" />
+        <link rel="icon" href="/assets/website/img/clashnyanpasunode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN天空 免费节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnsky.github.io/news/article-102948.htm" />
+    <meta property="og:site_name" content="VPN天空 免费节点订阅官网" />
+    <meta property="og:title" content="Vue中transition单个节点过渡与transition-group列表过渡全过程_vue.js" />
+    <meta property="og:image" content="https://vpnsky.github.io/uploads/20240728-1/ca1d8ca1db9e20e2449ae58d9c86baae.webp" />
+        <meta property="og:release_date" content="2025-04-24T09:16:37" />
+    <meta property="og:updated_time" content="2025-04-24T09:16:37" />
+        <meta property="og:description" content="目录  transition单个节点过渡与transition-group列表过渡 transition的过渡作用和transition-group    transition单个节点过渡与trans" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue中transition单个节点过渡与transition-group列表过渡全过程_vue.js">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clashnyanpasunode/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EWKLV7E45X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EWKLV7E45X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center xcblog-blog-logo">
+                                <span>VPN天空</span>
+                            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+            </nav><!-- .navbar -->
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+    <!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>Vue中transition单个节点过渡与transition-group列表过渡全过程_vue.js</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9 xcblog-blog-list">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li>transition单个节点过渡与transition-group列表过渡</li> <li>transition的过渡作用和transition-group</li> </ul> </div> <p class="maodian"></p> <h2>transition单个节点过渡与transition-group列表过渡</h2> <ul> <li> <code>transition</code>：<strong>只能满足单个节点的过渡效果，在多个节点的渲染上显得力不从心</strong> </li> </ul> <p>为了更好适用于更多的场景，vue 提供 &lt;transition-ground&gt;来多个元素的过渡</p> <p>首先创建了一个简单的应用，通过button  来实现动态的加减，使用了啊你，实际效果可运行一下代码</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;body&gt;           &lt;div id="app"&gt;           &lt;button @click="add"&gt;add&lt;/button&gt;           &lt;button @click="move"&gt;remove&lt;/button&gt;               &lt;transition-group               name="list"               enter-active-class="animated bounceInDown"               leave-active-class="animated bounceOut"               &gt;                   &lt;li v-for="item in num" :key="item"&gt;{{item}}&lt;/li&gt;               &lt;/transition-group&gt;           &lt;/div&gt;           &lt;/body&gt;  </pre> </div> <div class="ay1code"> <pre class="brush:js;">   &lt;script&gt;           var app=new Vue({               el:"#app",               data:{                   show:true,                   num:10,                   statu:false               },               methods:{                   add:function(){                         this.num++;                       },                   move:function(){                       this.num--;                   }               }           });       &lt;/script&gt;  </pre> </div> <ul> <li> <code>transition-group</code>：​​​​​​​<strong>拥有transition所有属性</strong> </li> </ul> <p>但是需要关注的是它们的不同之处：</p> <ul> <li>transition本身不会渲染出元素</li> <li>但是transition-group 会渲染出元素节点；默认  tag属性为&lt;span&gt;，可修改。</li> </ul> <p>ps:transition-group 的元素必须指定key 属性</p> <p>在列表元素的动态加入移除中，整个列表会因为元素的改变而相应的改变位子，这些位子属性的改变会很生硬，所以transition-group给出prop  move-class;支持通过 CSS transform 过渡移动。当一个子节点被更新，从屏幕上的位置发生变化，它将会获取应用 CSS 移动类</p> <div class="ay1code"> <pre class="brush:css;">      &lt;style&gt;            .div1{                width:156px;            }            .cla1{                border:1px solid #222;                display:inline-block;                width:50px;                height:50px;                text-align: center;                vertical-align: middle;            }                .flip-list-move {      transition: transform 1s;    }            &lt;/style&gt;  </pre> </div> <div class="ay1code"> <pre class="brush:xhtml;">    &lt;body&gt;            &lt;div id="app"&gt;            &lt;button @click="chang"&gt;reverse&lt;/button&gt;            &lt;transition-group tag="div" class="div1" name="flip-list"&gt;                &lt;span class="cla1" v-for="item in list" :key="item"&gt;{{item}}&lt;/span&gt;            &lt;/transition-group&gt;                &lt;button @click="add"&gt;add&lt;/button&gt;            &lt;button @click="move"&gt;remove&lt;/button&gt;                &lt;transition-group                tag="ul"                name="flip-list"                enter-active-class="animated bounceInDown"                leave-active-class="animated bounceOut"                &gt;                    &lt;li v-for="(item,index) in num" :key="item"&gt;{{item}}={{index}}&lt;/li&gt;                &lt;/transition-group&gt;            &lt;/div&gt;        &lt;/body&gt;  </pre> </div> <div class="ay1code"> <pre class="brush:js;">    &lt;script&gt;        function shuffle(arr){        var result = [],            random;        while(arr.length&gt;0){            random = Math.floor(Math.random() * arr.length);            result.push(arr[random])            arr.splice(random, 1)        }        return result;    }            var app=new Vue({                el:"#app",                data:{                    show:true,                    n:3,                    num:[1,2,3],                    list:[1,2,3,4,5,6,7,8,9],                    statu:false                },                methods:{                    chang:function(){                        this.list=shuffle(app.list);                    },                    add:function(){                          this.num.splice(3,0,++this.n)                        },                    move:function(){                         this.num.splice(3,1)                         console.log(this.num)                    }                }            });        &lt;/script&gt;  </pre> </div> <p class="maodian"></p> <h2>transition的过渡作用和transition-group</h2> <p>&lt;transition&gt;标签有两个属性，name 属性和 mode 属性。</p> <ul> <li> <code>transition</code>：里的 name 值fade 就是 .fade-enter-active,类名开头的 fade，</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;transition name="fade" mode="out-in"&gt;     &lt;router-view/&gt;     &lt;router-view class="left" name="nav" /&gt;     &lt;router-view class="right" name="con" /&gt;  &lt;/transition&gt;          .fade-enter-active, .fade-leave-active {    transition:opacity .4s;  }  .fade-enter, .fade-leave-to {    opacity:0;  }</pre> </div> <p>注意：transition 里面的&lt;div key="c"&gt;111222&lt;/div&gt;的内容是不显示，如果要显示内容需要把 transition 标签换成 transition-group 标签，</p> <ul> <li> <code>transition-group</code>：标里的所有子元素都要有key值，不然过渡效果是显示不出来的，而且每个子元素标签的key值是不一样的，不能重复。</li> </ul> <div class="ay1code"> <pre class="brush:xhtml;">&lt;transition-group name="aaa" mode="in-out"&gt;      &lt;router-view key="d"/&gt;      &lt;router-view class="left" name="nav" key="a" /&gt;      &lt;router-view class="right" name="con" key="b" /&gt;      &lt;div key="c"&gt;111222&lt;/div&gt;  &lt;/transition-group&gt;</pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-102943.htm">vue实现拖拽窗口功能_vue.js</a></p>
+                                        <p>下一个：<a href="/news/article-103721.htm">宠物店利润大吗（宠物店盈利模式是什么）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-89539.htm" title="宠物店一个月卖几只 宠物店一个月卖几只猫">宠物店一个月卖几只 宠物店一个月卖几只猫</a></li>
+                        <li class="py-2"><a href="/news/article-69546.htm" title="南京领养宠物的地方在哪里啊多少钱（南京领养宠物的地方在哪里啊多少钱一个月）">南京领养宠物的地方在哪里啊多少钱（南京领养宠物的地方在哪里啊多少钱一个月）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-22-clash-v2ray-ss-ssr.htm" title="VPN天空 | 4月22日18.1M/S|免费V2ray/Shadowrocket/Clash/SSR订阅节点分享">VPN天空 | 4月22日18.1M/S|免费V2ray/Shadowrocket/Clash/SSR订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-87364.htm" title="动物疫病预防控制机构改革（动物疫病预防控制机构改革最新消息）">动物疫病预防控制机构改革（动物疫病预防控制机构改革最新消息）</a></li>
+                        <li class="py-2"><a href="/news/article-101357.htm" title="图解Kafka架构与工作原理">图解Kafka架构与工作原理</a></li>
+                        <li class="py-2"><a href="/news/article-86638.htm" title="北京野生动物园鹦鹉馆电话（北京野生动物园鹦鹉馆电话多少）">北京野生动物园鹦鹉馆电话（北京野生动物园鹦鹉馆电话多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-15-free-node-subscribe.htm" title="VPN天空 | 4月15日20.4M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点分享">VPN天空 | 4月15日20.4M/S|免费Clash/Shadowrocket/V2ray/SSR订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-subscribe-node.htm" title="VPN天空 | 3月14日20.4M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点分享">VPN天空 | 3月14日20.4M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-free-node-subscribe.htm" title="VPN天空 | 4月10日18.8M/S|免费SSR/Clash/Shadowrocket/V2ray订阅节点分享">VPN天空 | 4月10日18.8M/S|免费SSR/Clash/Shadowrocket/V2ray订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-78226.htm" title="动物疫苗属于兽药吗为什么呢不能用（动物疫苗属于什么行业）">动物疫苗属于兽药吗为什么呢不能用（动物疫苗属于什么行业）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">77</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">79</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Us Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="container mt-4">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                VPN天空 免费节点订阅官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
