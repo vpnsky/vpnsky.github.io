@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnsky.github.io/news/article-108716.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>关于MySQL支持的所有字符集的查询是什么？</title>
+        <meta name="description" content="借助以下查询，我们可以看到MySQL支持的所有字符集- mysql&gt;&nbsp;Show&nbsp;Character&nbsp;Set; +-----------+--------------" />
+        <link rel="icon" href="/assets/website/img/clashnyanpasunode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN天空 免费节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnsky.github.io/news/article-108716.htm" />
+    <meta property="og:site_name" content="VPN天空 免费节点订阅官网" />
+    <meta property="og:title" content="关于MySQL支持的所有字符集的查询是什么？" />
+    <meta property="og:image" content="https://vpnsky.github.io/uploads/20240728-1/d75c00c98f8556eb4655706333f86de6.webp" />
+        <meta property="og:release_date" content="2025-05-01T09:02:50" />
+    <meta property="og:updated_time" content="2025-05-01T09:02:50" />
+        <meta property="og:description" content="借助以下查询，我们可以看到MySQL支持的所有字符集- mysql&gt;&nbsp;Show&nbsp;Character&nbsp;Set; +-----------+--------------" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="关于MySQL支持的所有字符集的查询是什么？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clashnyanpasunode/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EWKLV7E45X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EWKLV7E45X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center xcblog-blog-logo">
+                                <span>VPN天空</span>
+                            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+            </nav><!-- .navbar -->
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+    <!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>关于MySQL支持的所有字符集的查询是什么？</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9 xcblog-blog-list">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<p>借助以下查询，我们可以看到MySQL支持的所有字符集-</p> <pre>mysql&gt;&nbsp;Show&nbsp;Character&nbsp;Set; +-----------+-----------------------------+---------------------+--------+ |&nbsp;Charset&nbsp;&nbsp;&nbsp;|&nbsp;Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Default&nbsp;collation&nbsp;&nbsp;&nbsp;|&nbsp;Maxlen&nbsp;| +----------&nbsp;+-----------------------------+---------------------+--------+ |&nbsp;big5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Big5&nbsp;Traditional&nbsp;Chinese&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;big5_chinese_ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;| |&nbsp;dec8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;DEC&nbsp;West&nbsp;European&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;dec8_swedish_ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;cp850&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;DOS&nbsp;West&nbsp;European&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;cp850_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;hp8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;HP&nbsp;West&nbsp;European&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;hp8_english_ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;koi8r&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;KOI8-R&nbsp;Relcom&nbsp;Russian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;koi8r_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;latin1&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;cp1252&nbsp;West&nbsp;European&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;latin1_swedish_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;latin2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ISO&nbsp;8859-2&nbsp;Central&nbsp;European&nbsp;|&nbsp;latin2_general_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;swe7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;7bit&nbsp;Swedish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;swe7_swedish_ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;ascii&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;US&nbsp;ASCII&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ascii_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;ujis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;EUC-JP&nbsp;Japanese&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ujis_japanese_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;| |&nbsp;sjis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Shift-JIS&nbsp;Japanese&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;sjis_japanese_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;| |&nbsp;hebrew&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ISO&nbsp;8859-8&nbsp;Hebrew&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;hebrew_general_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;tis620&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;TIS620&nbsp;Thai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;tis620_thai_ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;euckr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;EUC-KR&nbsp;Korean&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;euckr_korean_ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;| |&nbsp;koi8u&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;KOI8-U&nbsp;Ukrainian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;koi8u_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;gb2312&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;GB2312&nbsp;Simplified&nbsp;Chinese&nbsp;&nbsp;&nbsp;|&nbsp;gb2312_chinese_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;| |&nbsp;greek&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ISO&nbsp;8859-7&nbsp;Greek&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;greek_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;cp1250&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Windows&nbsp;Central&nbsp;European&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;cp1250_general_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;gbk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;GBK&nbsp;Simplified&nbsp;Chinese&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;gbk_chinese_ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;| |&nbsp;latin5&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ISO&nbsp;8859-9&nbsp;Turkish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;latin5_turkish_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;armscii8&nbsp;&nbsp;|&nbsp;ARMSCII-8&nbsp;Armenian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;armscii8_general_ci&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;utf8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;UTF-8&nbsp;Unicode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;utf8_general_ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;| |&nbsp;ucs2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;UCS-2&nbsp;Unicode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ucs2_general_ci&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;| |&nbsp;cp866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;DOS&nbsp;Russian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;cp866_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;keybcs2&nbsp;&nbsp;&nbsp;|&nbsp;DOS&nbsp;Kamenicky&nbsp;Czech-Slovak&nbsp;&nbsp;|&nbsp;keybcs2_general_ci&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;macce&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Mac&nbsp;Central&nbsp;European&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;macce_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;macroman&nbsp;&nbsp;|&nbsp;Mac&nbsp;West&nbsp;European&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;macroman_general_ci&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;cp852&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;DOS&nbsp;Central&nbsp;European&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;cp852_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;latin7&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;ISO&nbsp;8859-13&nbsp;Baltic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;latin7_general_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;utf8mb4&nbsp;&nbsp;&nbsp;|&nbsp;UTF-8&nbsp;Unicode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;utf8mb4_general_ci&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;| |&nbsp;cp1251&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Windows&nbsp;Cyrillic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;cp1251_general_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;utf16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;UTF-16&nbsp;Unicode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;utf16_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;| |&nbsp;cp1256&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Windows&nbsp;Arabic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;cp1256_general_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;cp1257&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Windows&nbsp;Baltic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;cp1257_general_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;utf32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;UTF-32&nbsp;Unicode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;utf32_general_ci&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;| |&nbsp;binary&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Binary&nbsp;pseudo&nbsp;charset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;binary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;geostd8&nbsp;&nbsp;&nbsp;|&nbsp;GEOSTD8&nbsp;Georgian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;geostd8_general_ci&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;| |&nbsp;cp932&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;SJIS&nbsp;for&nbsp;Windows&nbsp;Japanese&nbsp;&nbsp;&nbsp;|&nbsp;cp932_japanese_ci&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;| |&nbsp;eucjpms&nbsp;&nbsp;&nbsp;|&nbsp;UJIS&nbsp;for&nbsp;Windows&nbsp;Japanese&nbsp;&nbsp;&nbsp;|&nbsp;eucjpms_japanese_ci&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;| +-----------+-----------------------------+---------------------+--------+ 39&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.14&nbsp;sec)</pre> <div></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-107887.htm">米乐科技网络科技有限公司（米乐信息有限公司）</a></p>
+                                        <p>下一个：<a href="/news/article-108717.htm">动物打疫苗后的不良反应有哪些表现（动物打了疫苗的,伤了人怎么办）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-96976.htm" title="宠物医院办证流程图（宠物医院办证流程图）">宠物医院办证流程图（宠物医院办证流程图）</a></li>
+                        <li class="py-2"><a href="/news/article-90862.htm" title="动物疫苗注射器视频教程（动物疫苗注射注意事项）">动物疫苗注射器视频教程（动物疫苗注射注意事项）</a></li>
+                        <li class="py-2"><a href="/news/article-105346.htm" title="动物医院实践心得5000字左右作文三年级下册（动物医院实训总结）">动物医院实践心得5000字左右作文三年级下册（动物医院实训总结）</a></li>
+                        <li class="py-2"><a href="/news/article-95535.htm" title="JVM系列：jinfo命令详解">JVM系列：jinfo命令详解</a></li>
+                        <li class="py-2"><a href="/news/article-108716.htm" title="关于MySQL支持的所有字符集的查询是什么？">关于MySQL支持的所有字符集的查询是什么？</a></li>
+                        <li class="py-2"><a href="/news/article-90302.htm" title="redis+GEOhash地理位置">redis+GEOhash地理位置</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-4-free-node-subscribe.htm" title="VPN天空 | 4月4日19.6M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点分享">VPN天空 | 4月4日19.6M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-98443.htm" title="北京宠爱国际动物医疗机构有限公司官网（北京宠爱国际医院怎么样）">北京宠爱国际动物医疗机构有限公司官网（北京宠爱国际医院怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-102943.htm" title="vue实现拖拽窗口功能_vue.js">vue实现拖拽窗口功能_vue.js</a></li>
+                        <li class="py-2"><a href="/news/article-100716.htm" title="领养狗狗签协议有效吗知乎（领养狗狗签协议有效吗知乎全文）">领养狗狗签协议有效吗知乎（领养狗狗签协议有效吗知乎全文）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Us Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="container mt-4">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                VPN天空 免费节点订阅官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
