@@ -1,4 +1,4 @@
-# VPN天空 | 5月1日19.6M/S|免费Clash/V2ray/SSR/Shadowrocket订阅节点分享  更新时间 2025-05-01 09:12:01
+# VPN天空 | 5月6日21.6M/S|免费V2ray/Clash/Shadowrocket/SSR订阅节点分享  更新时间 2025-05-06 08:55:47
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://vpnsky.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://vpnsky.github.io/uploads/2025/05/0-20250501.yaml
-- https://vpnsky.github.io/uploads/2025/05/1-20250501.yaml
-- https://vpnsky.github.io/uploads/2025/05/2-20250501.yaml
-- https://vpnsky.github.io/uploads/2025/05/3-20250501.yaml
-- https://vpnsky.github.io/uploads/2025/05/4-20250501.yaml
+- https://vpnsky.github.io/uploads/2025/05/0-20250506.yaml
+- https://vpnsky.github.io/uploads/2025/05/1-20250506.yaml
+- https://vpnsky.github.io/uploads/2025/05/2-20250506.yaml
+- https://vpnsky.github.io/uploads/2025/05/3-20250506.yaml
+- https://vpnsky.github.io/uploads/2025/05/4-20250506.yaml
 
 ### V2ray订阅链接
 
-- https://vpnsky.github.io/uploads/2025/05/0-20250501.txt
-- https://vpnsky.github.io/uploads/2025/05/1-20250501.txt
-- https://vpnsky.github.io/uploads/2025/05/2-20250501.txt
-- https://vpnsky.github.io/uploads/2025/05/3-20250501.txt
-- https://vpnsky.github.io/uploads/2025/05/4-20250501.txt
+- https://vpnsky.github.io/uploads/2025/05/0-20250506.txt
+- https://vpnsky.github.io/uploads/2025/05/1-20250506.txt
+- https://vpnsky.github.io/uploads/2025/05/2-20250506.txt
+- https://vpnsky.github.io/uploads/2025/05/3-20250506.txt
+- https://vpnsky.github.io/uploads/2025/05/4-20250506.txt
 
 ### Sing-box订阅链接
 
-- https://vpnsky.github.io/uploads/2025/05/20250501.json
+- https://vpnsky.github.io/uploads/2025/05/20250506.json
 
 ## 更多clash节点订阅 ：
 

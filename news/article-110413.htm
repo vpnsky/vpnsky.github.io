@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnsky.github.io/news/article-110413.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>单链表之按顺序插入元素</title>
+        <meta name="description" content="单向链表第二种添加方式： 按照排名将节点插入指定位置，如果指定位置有节点，就提示添加失败！  需要按照编号的顺序添加  首先找到新添加节点的位置，通过辅助变量，遍历来搞定 新的节点.next = te" />
+        <link rel="icon" href="/assets/website/img/clashnyanpasunode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN天空 免费节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnsky.github.io/news/article-110413.htm" />
+    <meta property="og:site_name" content="VPN天空 免费节点订阅官网" />
+    <meta property="og:title" content="单链表之按顺序插入元素" />
+    <meta property="og:image" content="https://vpnsky.github.io/uploads/20240728-1/d75c00c98f8556eb4655706333f86de6.webp" />
+        <meta property="og:release_date" content="2025-05-03T10:28:22" />
+    <meta property="og:updated_time" content="2025-05-03T10:28:22" />
+        <meta property="og:description" content="单向链表第二种添加方式： 按照排名将节点插入指定位置，如果指定位置有节点，就提示添加失败！  需要按照编号的顺序添加  首先找到新添加节点的位置，通过辅助变量，遍历来搞定 新的节点.next = te" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="单链表之按顺序插入元素">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="/assets/website/css/clashnyanpasunode/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EWKLV7E45X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EWKLV7E45X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center xcblog-blog-logo">
+                                <span>VPN天空</span>
+                            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+            </nav><!-- .navbar -->
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header><!-- End Header -->
+    <!-- End Header -->
+    <!-- End Header -->
+    <main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h1>单链表之按顺序插入元素</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li>正文</li>
+                    </ol>
+                </div>
+            </nav>
+        </div><!-- End Breadcrumbs -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-9 xcblog-blog-list">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>单向链表第二种添加方式：</p> <p>按照排名将节点插入指定位置，如果指定位置有节点，就提示添加失败！</p> <p><img fetchpriority="high" decoding="async" alt="" height="327" src="http://img.555519.xyz/uploads3/20220902/c87f9d051e38d586343d97985126a749.jpg"></p> <p>需要按照编号的顺序添加</p> <ul> <li>首先找到新添加节点的位置，通过辅助变量，遍历来搞定</li> <li>新的节点.next = temp.next</li> <li>将temp.next = 新的节点</li> </ul> <pre><code class="language-java">//第二种方式插入节点     //按照英雄排名插入到指定位置，如果有这个排名，则提示插入失败     public void addNode2(HeroNode heroNode){         //因为我们找的temp是位于添加位置的前一个节点，否则添加不了         HeroNode temp = head;         boolean flag = false;   //flag标志添加的编号是否存在，默认为false         while(true){             if(temp.next == null){  //说明temp已经在链表的最后                 break;             }             if(temp.next.no &gt; heroNode.no){    //位置已找到                 break;             }else if(temp.next.no == heroNode.no){   //说明要添加的heroNode的no已存在于链表中                 flag = true;   //说明编号存在                 break;             }             temp = temp.next;   //后移，遍历当前链表         }         if(flag){  //如果flag为真，则说明heroNode.no已存在，打印提示信息             System.out.println("添加失败！此英雄的编号"+heroNode.no+"存在");         }else{             //插入到链表中，temp后面             heroNode.next = temp.next;             temp.next = heroNode;         }</code></pre> <p>测试：<img decoding="async" alt="" height="340" src="http://img.555519.xyz/uploads3/20220902/c45216989fdb603c6f5ef8b55c90d005.jpg"></p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109576.htm">畜牧局公务员报考要求（畜牧局公务员报考要求党员吗?）</a></p>
+                                        <p>下一个：<a href="/news/article-110414.htm">长沙领养宠物猫在哪里领（长沙领养宠物猫在哪里领养）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-94241.htm" title="领养宠物还可以要回来吗知乎（领养宠物还可以要回来吗知乎文章）">领养宠物还可以要回来吗知乎（领养宠物还可以要回来吗知乎文章）</a></li>
+                        <li class="py-2"><a href="/news/article-90863.htm" title="宠物诊所诊疗许可证内容（宠物诊所诊疗许可证内容是什么）">宠物诊所诊疗许可证内容（宠物诊所诊疗许可证内容是什么）</a></li>
+                        <li class="py-2"><a href="/news/article-110413.htm" title="单链表之按顺序插入元素">单链表之按顺序插入元素</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-12-node-share.htm" title="VPN天空 | 4月12日18.3M/S|免费SSR/Clash/Shadowrocket/V2ray订阅节点分享">VPN天空 | 4月12日18.3M/S|免费SSR/Clash/Shadowrocket/V2ray订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-96977.htm" title="动物疫苗价格排行（动物疫苗有哪些大厂家）">动物疫苗价格排行（动物疫苗有哪些大厂家）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-27-free-high-speed-nodes.htm" title="VPN天空 | 4月27日18.6M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点分享">VPN天空 | 4月27日18.6M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点分享</a></li>
+                        <li class="py-2"><a href="/news/article-107120.htm" title="上海市宠物领养中心官网（上海宠物领养中心免费领养狗狗）">上海市宠物领养中心官网（上海宠物领养中心免费领养狗狗）</a></li>
+                        <li class="py-2"><a href="/news/article-89539.htm" title="宠物店一个月卖几只 宠物店一个月卖几只猫">宠物店一个月卖几只 宠物店一个月卖几只猫</a></li>
+                        <li class="py-2"><a href="/news/article-103721.htm" title="宠物店利润大吗（宠物店盈利模式是什么）">宠物店利润大吗（宠物店盈利模式是什么）</a></li>
+                        <li class="py-2"><a href="/news/article-101358.htm" title="猫咪体外驱虫中毒怎么解毒（猫体外驱虫药过量处理方法）">猫咪体外驱虫中毒怎么解毒（猫体外驱虫药过量处理方法）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- End About Us Section -->
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="container mt-4">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                VPN天空 免费节点订阅官网 版权所有 Powered by WordPress
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashnyanpasunode/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="/assets/website/js/frontend/clashnyanpasunode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
